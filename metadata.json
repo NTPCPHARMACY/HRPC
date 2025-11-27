@@ -1,0 +1,5 @@
+{
+  "name": "HRPC Portal",
+  "description": "New Taipei City Hospital Human Research Protection Center official portal with simulated CMS and Gemini-powered assistant.",
+  "requestFramePermissions": []
+}
