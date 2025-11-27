@@ -1,8 +1,7 @@
 import { GoogleGenAI, Chat } from "@google/genai";
 import { SYSTEM_INSTRUCTION } from '../constants';
 
-const apiKey = process.env.API_KEY || '';
-const ai = new GoogleGenAI({ apiKey });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 let chatSession: Chat | null = null;
 
@@ -20,7 +19,7 @@ export const getChatSession = (): Chat => {
 
 export const sendMessageToGemini = async (message: string): Promise<string> => {
   try {
-    if (!apiKey) {
+    if (!process.env.API_KEY) {
       return "請配置 API KEY 以啟用 AI 助手功能。";
     }
     const chat = getChatSession();
